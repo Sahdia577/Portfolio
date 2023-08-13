@@ -1,5 +1,13 @@
-export const PortfolioPage = () => {
+import { PortfolioItemCard } from '../components/PortfolioItemCard';
+import { portfolioItems } from '../utils/data';
+import { Center } from '@chakra-ui/react'
+
+export const PortfolioPage = ({ clickFn }) => {
     return (
-        <p>New Content Coming Soon!</p>
+        <Center gap={8} h='100vh' bgColor='purple.200'>
+            {portfolioItems.map((item) => (
+                <PortfolioItemCard clickFn={clickFn} item={item} key={item.id} />
+            ))}
+        </Center>
     );
 };
